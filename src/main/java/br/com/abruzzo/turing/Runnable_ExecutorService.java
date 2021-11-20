@@ -16,19 +16,21 @@ import java.util.concurrent.Future;
  *
  * @author emmanuel
  */
-public class TesteJava_1 {
+public class Runnable_ExecutorService {
     
     
-    public static void main(String[] args) {
+    public static void foo(String[] args) {
 
 
         AsyncPrintFooBarAlternately_1 printFooBar = new AsyncPrintFooBarAlternately_1(3);
+
         Runnable printFoo = new Runnable() {
             @Override
             public void run() {
                 System.out.println("foo");
             }
         };
+
 
         Runnable printBar = new Runnable() {
             @Override
@@ -39,9 +41,30 @@ public class TesteJava_1 {
 
         printFoo.run();
         printBar.run();
-
         executeTask(printFoo);
         executeTask(printBar);
+
+
+        //--------------------------------------------------------------------------------------
+
+        AsyncPrintFooBarAlternately_3 asyncPrint = new AsyncPrintFooBarAlternately_3(3);
+
+        try {
+            asyncPrint.foo(printFoo);
+            asyncPrint.bar(printBar);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    //------------------------------------------------------------------------------------------
+
+        AsyncPrintFooBarAlternately_4 asyncPrint4 = new AsyncPrintFooBarAlternately_4(4);
+
+        try {
+            asyncPrint4.foo(printFoo);
+            asyncPrint4.bar(printBar);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
 
