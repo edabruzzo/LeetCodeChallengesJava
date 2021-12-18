@@ -1,0 +1,7 @@
+
+Trigo no tabuleiro:
+
+    https://github.com/mvsombra/urionlinejudge/blob/master/05.Matem%C3%A1tica/1169%20-%20Trigo%20no%20Tabuleiro.java
+    https://www.ti-enxame.com/pt/java/como-arredondar-para-baixo-numeros-inteiros-em-java/968990287/
+    https://www.beecrowd.com.br/judge/en/questions/view/1169/164?origem=1
+

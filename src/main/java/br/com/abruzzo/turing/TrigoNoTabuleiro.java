@@ -1,10 +1,11 @@
 package br.com.abruzzo.turing;
 
-import java.io.*;
 import java.util.Scanner;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class TrigoNoTabuleiro {
+
 
     static boolean DEBUG = true;
     private static boolean LER_SCANNER = false;
@@ -33,16 +34,12 @@ public class TrigoNoTabuleiro {
             for(int i=0 ; i<n ; i++) {
                 int x = lerProximaEntrada();
                 if(x>=1 && x<=100){
-                    // https://github.com/mvsombra/urionlinejudge/blob/master/05.Matem%C3%A1tica/1169%20-%20Trigo%20no%20Tabuleiro.java
-                    double valor = 1;
-                    for(int j=0; j<x; j++){
-                       valor *=2;
-                    }
-                    // https://www.ti-enxame.com/pt/java/como-arredondar-para-baixo-numeros-inteiros-em-java/968990287/
-                    System.out.printf("%.0f kg\n", Math.floor((valor/12) / 1000));   //Complete o código aqui.
-
+                    double valor;
+                    if(x==64) valor = (Math.pow(2,63)-1)/6;
+                    else valor = Math.pow(2,x)/12;
+                    System.out.printf("%.0f kg\n", Math.floor((valor) / 1000));
                 }
-                     }
+            }
 
         }
     }
