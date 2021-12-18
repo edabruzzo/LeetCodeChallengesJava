@@ -9,7 +9,7 @@ public class TrigoNoTabuleiro {
 
     static boolean DEBUG = true;
     private static boolean LER_SCANNER = false;
-    private static final String ARQUIVO_ENTRADAS = "/home/usuario/IdeaProjects/LeetCodeChallengesJava/src/main/java/br/com/abruzzo/turing/entradas.txt.teste2";
+    private static final String ARQUIVO_ENTRADAS = "/home/usuario/IdeaProjects/LeetCodeChallengesJava/src/main/java/br/com/abruzzo/turing/arquivosDebug/entradas.txt.tabuleiro";
     private static BufferedReader bufferedReader;
     private static Scanner scanner = new Scanner(System.in);
 
