@@ -113,10 +113,6 @@ public class Dama {
                 else
                     System.out.println("2");
             }
-
-
             }
-
-
     }
 }
