@@ -11,11 +11,10 @@ public class Fila implements IFila {
 
 
     @Override
-    public void enqueue(Node4Queue novoNode){
+    public void enqueue(Node4Queue novoNode) {
         novoNode.setNodeReferencia(this.nodeReferencia);
-        this.nodeReferencia.setNodeReferencia(novoNode);
+        this.nodeReferencia = novoNode;
     }
-
 
 
 
@@ -53,19 +52,24 @@ public class Fila implements IFila {
 
         String retorno = "";
 
-        if(this.isEmpty()) retorno = "Fila vazia";
-        else{
-            Node4Queue auxNode;
-            while(true) {
-                if (this.nodeReferencia.getNodeReferencia() == null)
+        Node4Queue nodeAux = this.nodeReferencia;
+        if(! this.isEmpty()){
+
+            while(true){
+                retorno += String.format("Node --> armazena o seguinte objeto --> %s\n", nodeAux.getObject().toString());
+
+                if(nodeAux.getNodeReferencia() == null){
+                    retorno += "Último nó";
                     break;
-                else {
-                    auxNode = nodeReferencia.getNodeReferencia();
-                    retorno += String.format("{Node} Dado armazenado: %s {Node}",nodeReferencia.getObject().toString());
                 }
+                else
+                    nodeAux = nodeAux.getNodeReferencia();
 
             }
-        }
+
+        }else
+            retorno = "Fila vazia";
+
         return retorno;
     }
 }
