@@ -25,7 +25,42 @@ public class TrigoNoTabuleiro {
     }
 
 
+
+
     public static void main(String[] args) {
+
+     resolverComBitwiseOperations();
+     resolverComMathPow();
+
+    }
+
+
+
+
+
+
+
+    public static void resolverComBitwiseOperations() {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        for(int i=0 ; i<n ; i++) {
+            long x = sc.nextLong();
+            if (x <= 5) {
+                System.out.println("0 kg");
+            } else {
+                long two_power = 1L << (x - 5L);
+                System.out.println((two_power / 375L) + " kg");
+            }
+
+        }
+        sc.close();
+    }
+
+
+
+    public static void resolverComMathPow() {
 
         int n = lerProximaEntrada();
         boolean condicao1 = n >=1 && n<=100;
