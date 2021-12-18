@@ -1,21 +1,21 @@
 package EstruturaDados;
 
-public class Node4Queue {
+public class Node4Queue<T> {
 
-    private Object object;
+    private T object;
     private Node4Queue nodeReferencia;
 
-    public Node4Queue(Object object) {
+    public Node4Queue(T object) {
         this.object = object;
         this.nodeReferencia = null;
     }
 
 
-    public Object getObject() {
+    public T getObject() {
         return object;
     }
 
-    public void setObject(Object object) {
+    public void setObject(T object) {
         this.object = object;
     }
 

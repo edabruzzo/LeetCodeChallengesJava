@@ -1,14 +1,12 @@
 package EstruturaDados;
 
-public class Fila implements IFila {
+public class Fila<T> implements IFila {
 
     private Node4Queue nodeReferencia;
 
-
     public Fila() {
-        this.nodeReferencia = null;
+        this.nodeReferencia = nodeReferencia;
     }
-
 
     @Override
     public void enqueue(Node4Queue novoNode) {

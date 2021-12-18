@@ -1,9 +1,10 @@
 package EstruturaDados;
 
-public interface IFila {
-    void enqueue(Node4Queue novoNode);
+public interface IFila<T> {
 
-    Node4Queue dequeue();
+    void enqueue(Node4Queue objeto);
+
+    T dequeue();
 
     boolean isEmpty();
 

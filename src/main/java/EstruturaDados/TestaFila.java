@@ -4,7 +4,7 @@ public class TestaFila {
 
     public static void main(String[] args) {
 
-        Fila fila = new Fila();
+        Fila<String> fila = new Fila<String>();
 
         for(int i=0; i<11; i++){
             fila.enqueue(new Node4Queue(i));
