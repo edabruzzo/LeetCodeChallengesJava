@@ -1,6 +1,6 @@
 package EstruturaDados;
 
-public class Pilha {
+public class Pilha implements IPilha {
 
     private Node4Stack noReferenciaEntrada;
 
@@ -9,11 +9,13 @@ public class Pilha {
     }
 
 
+    @Override
     public Node4Stack top(){
         return this.noReferenciaEntrada;
     }
 
 
+    @Override
     public void push(Node4Stack novoNode){
         Node4Stack auxiliar = this.noReferenciaEntrada;
          this.noReferenciaEntrada = novoNode;
@@ -21,6 +23,7 @@ public class Pilha {
     }
 
 
+    @Override
     public Node4Stack pop(){
 
         if(!isEmpty()){
@@ -36,6 +39,7 @@ public class Pilha {
 
 
 
+    @Override
     public boolean isEmpty(){
         return noReferenciaEntrada == null ? true : false;
     }
