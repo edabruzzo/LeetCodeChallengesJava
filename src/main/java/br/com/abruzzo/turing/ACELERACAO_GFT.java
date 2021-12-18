@@ -7,6 +7,7 @@ import java.util.StringTokenizer;
 
 public class ACELERACAO_GFT {
 
+    private static final String ARQUIVO_ENTRADAS = "/home/emmanuel/NetBeansProjects/Turing/src/main/java/br/com/abruzzo/turing/entradas.txt.teste1";
     private static BufferedReader bufferedReader = null;
     private static boolean DEBUG = true;
 
@@ -56,7 +57,7 @@ public class ACELERACAO_GFT {
             bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         else {
             try {
-                bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("/home/emmanuel/NetBeansProjects/Turing/src/main/java/br/com/abruzzo/turing/entradas.txt.teste1")));
+                bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(ARQUIVO_ENTRADAS)));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
