@@ -24,7 +24,8 @@ public class RomeuEJulieta {
 
     static boolean DEBUG = true;
     private static boolean LER_SCANNER = false;
-    private static final String ARQUIVO_ENTRADAS = "/home/usuario/IdeaProjects/LeetCodeChallengesJava/src/main/java/br/com/abruzzo/turing/arquivosDebug/entradas.txt.romeuEJulieta";
+    private static String nomeDesafio = "romeuEJulieta";
+    private static final String ARQUIVO_ENTRADAS = "/home/usuario/IdeaProjects/LeetCodeChallengesJava/src/main/java/br/com/abruzzo/turing/arquivosDebug/entradas.txt."+nomeDesafio;
     private static BufferedReader bufferedReader;
     private static Scanner scanner = new Scanner(System.in);
 
@@ -72,15 +73,17 @@ public class RomeuEJulieta {
 
         boolean condicao1 = horasaida >=0 && horasaida <=23;
         boolean condicao2 = tempoviagem >=1 && tempoviagem <=12;
-        boolean condicao3 = fuso >=-5 && tempoviagem <=5;
+        boolean condicao3 = fuso >=-5 && fuso <=5;
+
+        int horarioChegada;
 
         //Escreva a sua lógica aqui
-        int ajuste = 0;
-
-
-
-        System.out.println(ajuste);
-
-
+        if(condicao1 && condicao2 && condicao3){
+            int ajuste = horasaida + tempoviagem;
+            if(ajuste >= 24) ajuste -= 24;
+            horarioChegada = ajuste + fuso;
+            if(horarioChegada < 0) horarioChegada += 24;
+            System.out.println(horarioChegada);
+        }
     }
 }
