@@ -1,4 +1,4 @@
-package br.com.abruzzo.turing.Challenges_DIO_LeetCode_Among_Others;
+package br.com.abruzzo.Challenges_DIO_LeetCode_Among_Others;
 
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.Condition;

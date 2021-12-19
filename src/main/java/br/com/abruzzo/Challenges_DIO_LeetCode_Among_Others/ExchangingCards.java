@@ -1,4 +1,4 @@
-package br.com.abruzzo.turing.Challenges_DIO_LeetCode_Among_Others;
+package br.com.abruzzo.Challenges_DIO_LeetCode_Among_Others;
 import java.io.*;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -19,7 +19,7 @@ public class ExchangingCards {
 
         try {
             if (DEBUG) {
-                in = new BufferedReader(new InputStreamReader(new FileInputStream("/home/emmanuel/NetBeansProjects/Turing/src/main/java/br/com/abruzzo/turing/entradas.txt.teste1")));
+                in = new BufferedReader(new InputStreamReader(new FileInputStream("/home/emmanuel/NetBeansProjects/Turing/src/main/java/br/com/abruzzo/arquivosDebug/entradas.txt.teste1")));
             } else {
                 in = new BufferedReader(new InputStreamReader(System.in));
             }

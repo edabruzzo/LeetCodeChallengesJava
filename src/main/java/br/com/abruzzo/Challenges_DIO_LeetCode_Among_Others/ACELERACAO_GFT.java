@@ -1,4 +1,4 @@
-package br.com.abruzzo.turing.Challenges_DIO_LeetCode_Among_Others;
+package br.com.abruzzo.Challenges_DIO_LeetCode_Among_Others;
 
 import java.io.*;
 import java.util.Scanner;
@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 public class ACELERACAO_GFT {
 
-    private static final String ARQUIVO_ENTRADAS = "/home/emmanuel/NetBeansProjects/Turing/src/main/java/br/com/abruzzo/turing/entradas.txt.teste1";
+    private static final String ARQUIVO_ENTRADAS = "/home/emmanuel/NetBeansProjects/Turing/src/main/java/br/com/abruzzo/arquivosDebug/entradas.txt.teste1";
     private static BufferedReader bufferedReader = null;
     private static boolean DEBUG = true;
 

@@ -1,11 +1,9 @@
-package br.com.abruzzo.turing.Challenges_DIO_LeetCode_Among_Others;
+package br.com.abruzzo.Challenges_DIO_LeetCode_Among_Others;
 
 import java.io.*;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Scanner;
 
-public class Teste2 {
+public class MaryAndJohn {
 
 
     public static void exec1(String[] args) throws IOException {

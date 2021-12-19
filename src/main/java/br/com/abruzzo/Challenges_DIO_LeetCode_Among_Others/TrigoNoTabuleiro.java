@@ -1,4 +1,4 @@
-package br.com.abruzzo.turing.Challenges_DIO_LeetCode_Among_Others;
+package br.com.abruzzo.Challenges_DIO_LeetCode_Among_Others;
 
 import java.util.Scanner;
 import java.io.*;
@@ -9,7 +9,7 @@ public class TrigoNoTabuleiro {
 
     static boolean DEBUG = true;
     private static boolean LER_SCANNER = false;
-    private static final String ARQUIVO_ENTRADAS = "/home/usuario/IdeaProjects/LeetCodeChallengesJava/src/main/java/br/com/abruzzo/turing/arquivosDebug/entradas.txt.tabuleiro";
+    private static final String ARQUIVO_ENTRADAS = "/home/usuario/IdeaProjects/LeetCodeChallengesJava/src/main/java/br/com/abruzzo/arquivosDebug/entradas.txt.tabuleiro";
     private static BufferedReader bufferedReader;
     private static Scanner scanner = new Scanner(System.in);
 

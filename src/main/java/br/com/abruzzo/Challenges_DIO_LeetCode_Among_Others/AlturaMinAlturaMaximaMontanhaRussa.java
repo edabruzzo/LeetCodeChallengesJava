@@ -1,4 +1,4 @@
-package br.com.abruzzo.turing.Challenges_DIO_LeetCode_Among_Others;
+package br.com.abruzzo.Challenges_DIO_LeetCode_Among_Others;
 
 import java.io.*;
 import java.util.HashSet;
@@ -15,7 +15,7 @@ public class AlturaMinAlturaMaximaMontanhaRussa {
     private PrintWriter w;
     private StreamTokenizer token;
     private HashSet<Integer> entrada1;
-    private String PATH_ENTRADA = "/home/emmanuel/NetBeansProjects/Turing/src/main/java/br/com/abruzzo/turing/arquivosDebug/entradas.txt";
+    private String PATH_ENTRADA = "/home/emmanuel/NetBeansProjects/Turing/src/main/java/br/com/abruzzo/arquivosDebug/entradas.txt";
 
     private int numeroVisitantes, alturaMinima, alturaMaxima;
 

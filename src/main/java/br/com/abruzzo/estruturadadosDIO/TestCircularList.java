@@ -1,5 +1,7 @@
 package br.com.abruzzo.estruturadadosDIO;
 
+import java.util.Collections;
+
 public class TestCircularList {
 
 
@@ -15,4 +17,6 @@ public class TestCircularList {
         listaCircular.add(999999999);
         System.out.println(listaCircular.toString());
     }
+
+
 }

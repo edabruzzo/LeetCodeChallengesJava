@@ -1,4 +1,4 @@
-package br.com.abruzzo.turing.Challenges_DIO_LeetCode_Among_Others;
+package br.com.abruzzo.Challenges_DIO_LeetCode_Among_Others;
 
 /**
  * Ordenando Números Pares e Ímpares
@@ -75,7 +75,7 @@ public class OrdenacaoParesImpares {
             bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         else {
             try {
-                bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("/home/emmanuel/NetBeansProjects/Turing/src/main/java/br/com/abruzzo/turing/entradas.txt.teste1")));
+                bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("/home/emmanuel/NetBeansProjects/Turing/src/main/java/br/com/abruzzo/arquivosDebug/entradas.txt.teste1")));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
