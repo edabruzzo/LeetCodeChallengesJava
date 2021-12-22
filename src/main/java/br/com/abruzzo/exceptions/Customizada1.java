@@ -6,7 +6,6 @@ import java.io.*;
 public class Customizada1 {
 
 
-
     public static void main(String[] args){
         String nomeArquivo = JOptionPane.showInputDialog("Ditgite o nome do arquivo");
         imprimirArquivoConsole(nomeArquivo);
