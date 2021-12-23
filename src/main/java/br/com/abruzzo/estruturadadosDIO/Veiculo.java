@@ -64,7 +64,6 @@ public class Veiculo implements Comparable<Veiculo>{
     }
 
 
-
     @Override
     public String toString() {
         return "Veiculo{" +
@@ -72,21 +71,8 @@ public class Veiculo implements Comparable<Veiculo>{
                 ", modelo='" + modelo + '\'' +
                 ", cor='" + cor + '\'' +
                 ", ano=" + ano +
+                ", consumo=" + consumo +
                 '}';
-    }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Veiculo veiculo = (Veiculo) o;
-        return ano == veiculo.ano && Objects.equals(marca, veiculo.marca) && Objects.equals(modelo, veiculo.modelo) && Objects.equals(cor, veiculo.cor);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(marca, modelo, cor, ano);
     }
 
     @Override
