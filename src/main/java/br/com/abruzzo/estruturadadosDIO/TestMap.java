@@ -1,9 +1,6 @@
 package br.com.abruzzo.estruturadadosDIO;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TestMap {
 
@@ -36,6 +33,57 @@ public class TestMap {
 
         System.out.println(mapaVeiculos.toString());
 
+
+
+        Map<String, Double> mapaVeiculosConsumo = new HashMap<>();
+
+        Veiculo veiculo5 = new Veiculo("gol", 10.8d);
+        Veiculo veiculo6 = new Veiculo("fiat",15.1d);
+        Veiculo veiculo7 = new Veiculo("volks",20.7d);
+        Veiculo veiculo8 = new Veiculo("renault",18.2d);
+
+        List<Veiculo> listaVeiculosConsumo = new ArrayList<>();
+        listaVeiculosConsumo.add(veiculo5);
+        listaVeiculosConsumo.add(veiculo6);
+        listaVeiculosConsumo.add(veiculo7);
+        listaVeiculosConsumo.add(veiculo8);
+
+        for(Veiculo veiculo : listaVeiculosConsumo) {
+            mapaVeiculosConsumo.put(veiculo.getMarca(), veiculo.getConsumo());
+        }
+
+        Double valorMenorConsumo = Collections.min(mapaVeiculosConsumo.values());
+
+
+        Set<Map.Entry<String, Double>> entrySet = mapaVeiculosConsumo.entrySet();
+
+        System.out.println(entrySet);
+
+        for (Map.Entry<String, Double> entry: entrySet) {
+            if(entry.getValue() == valorMenorConsumo)
+                System.out.println(String.format("Marca com consumo mais eficiente -> %s", entry.toString()));
+        }
+
+
+
+        // Iterator
+
+        Iterator<Double> iteratorMapaVeiculos = mapaVeiculosConsumo.values().iterator();
+        double somaConsumo = 0;
+        while(iteratorMapaVeiculos.hasNext()){
+            somaConsumo += iteratorMapaVeiculos.next();
+        }
+        double mediaConsumo = somaConsumo / mapaVeiculosConsumo.size();
+        System.out.println(String.format("Média consumo: %.2f",mediaConsumo));
+        
+
+
+
+
+
+
     }
-    
+
+
+
 }
