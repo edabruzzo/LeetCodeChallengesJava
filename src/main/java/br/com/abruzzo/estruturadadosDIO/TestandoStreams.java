@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collector;
@@ -156,6 +157,64 @@ public class TestandoStreams {
         System.out.println("------------------------------------------");
 
 
+
+        System.out.println(listaString.stream().map(Integer::parseInt).reduce(Integer::sum));
+
+
+        System.out.println("------------------------------------------");
+
+        System.out.println("------------------------------------------");
+
+       listaString.stream()
+                .mapToInt(Integer::parseInt)
+                .average()
+                .ifPresentOrElse(new DoubleConsumer() {
+                    @Override
+                    public void accept(double v) {
+                        System.out.println(v);
+                    }
+                }, new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("Nulo");
+                    }
+                });
+
+
+        System.out.println("------------------------------------------");
+
+        System.out.println("------------------------------------------");
+
+        listaString.stream()
+                .mapToInt(Integer::parseInt)
+                .average()
+                .ifPresentOrElse(System.out::println,
+
+                        new Runnable() {
+                            @Override
+                            public void run() {
+                                System.out.println("Nulo");
+                            }
+                        }
+
+
+                );
+
+
+        System.out.println("------------------------------------------");
+
+
+
+
+
+        System.out.println("------------------------------------------");
+
+        listaString.stream()
+                .mapToInt(Integer::parseInt)
+                .findFirst()
+                .ifPresent(System.out::println);
+
+        System.out.println("------------------------------------------");
 
 
 
