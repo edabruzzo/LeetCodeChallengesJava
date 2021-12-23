@@ -8,6 +8,13 @@ public class Veiculo implements Comparable<Veiculo>{
     private String modelo;
     private String cor;
     private int ano;
+    private Double consumo;
+
+
+    public Veiculo(String marca, Double consumo) {
+        this.marca = marca;
+        this.consumo = consumo;
+    }
 
     public Veiculo(String marca, String modelo, String cor, int ano) {
         this.marca = marca;
@@ -47,6 +54,15 @@ public class Veiculo implements Comparable<Veiculo>{
     public void setAno(int ano) {
         this.ano = ano;
     }
+
+    public Double getConsumo() {
+        return consumo;
+    }
+
+    public void setConsumo(Double consumo) {
+        this.consumo = consumo;
+    }
+
 
 
     @Override
