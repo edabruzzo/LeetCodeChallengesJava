@@ -1,6 +1,7 @@
 package br.com.abruzzo.estruturadadosDIO;
 
 import java.util.*;
+import java.util.function.Function;
 
 public class TestMap {
 
@@ -99,15 +100,61 @@ public class TestMap {
         ordenarMap(mapaVeiculosConsumo);
 
 
-        Map<String, Livro> mapaLivros = new HashMap<>();
+        Map<String, Livro> mapaLivros = new HashMap<>() {{
 
+            put("Zé",new Livro("Zé", "História do zé", 30));
+            put( "Maria",new Livro("Maria", "História da Maria", 40));
+            put("João",new Livro("João", "História do João", 50));
+            put("Mário",new Livro("Mário", "História do Mário", 60));
+        }};
+
+        for (Map.Entry<String,Livro> entry : mapaLivros.entrySet()){
+            System.out.println(String.format("Autor %s -> Livro: %s ",entry.getKey(),entry.getValue().toString()));
+        }
+
+
+        Map<String, Livro> mapaLivrosLinkedHashMap = new LinkedHashMap<>(mapaLivros);
+        Map<String, Livro> mapaLivrosTreeMap = new TreeMap<>(mapaLivros);
+
+        Set<Map.Entry<String,Livro>> conjuntoMapsLivros = new TreeSet<>(new ComparatorMapLivros());
+        conjuntoMapsLivros.addAll(mapaLivros.entrySet());
+        System.out.println(conjuntoMapsLivros.toString());
+
+
+        /*
+        Criando o comparator no construtor do TreeSet
+         */
+        Set<Map.Entry<String,Livro>> conjuntoMapsLivros2 = new TreeSet<>(new Comparator<Map.Entry<String, Livro>>() {
+            @Override
+            public int compare(Map.Entry<String, Livro> livroEntry1, Map.Entry<String, Livro> livroEntry2) {
+                return livroEntry1.getValue().getPaginas().compareTo(livroEntry2.getValue().getPaginas());
+            }
+        });
+
+        conjuntoMapsLivros2.addAll(mapaLivros.entrySet());
+        System.out.println(conjuntoMapsLivros2.toString());
+
+
+        /*
+        Usando Function
+         */
+        Set<Map.Entry<String,Livro>> conjuntoMapsLivros3 = new TreeSet<>(Comparator.comparing(
+                new Function<Map.Entry<String, Livro>, Integer>(){
+
+                    @Override
+                    public Integer apply(Map.Entry<String, Livro> livroEntry) {
+                        return livroEntry.getValue().getPaginas();
+                    }
+                }
+        ));
+
+        conjuntoMapsLivros3.addAll(mapaLivros.entrySet());
+        System.out.println(conjuntoMapsLivros3.toString());
 
 
 
 
     }
-
-
 
 
 
@@ -116,9 +163,14 @@ public class TestMap {
     private static void ordenarMap(Map<?, ?> mapaVeiculosConsumo) {
 
 
-
     }
 
 
+    private static class ComparatorMapLivros implements Comparator<Map.Entry<String,Livro>> {
 
+        @Override
+        public int compare(Map.Entry<String, Livro> livroMap1, Map.Entry<String, Livro> livroMap2) {
+            return livroMap1.getValue().getNome().compareToIgnoreCase(livroMap2.getValue().getNome());
+        }
+    }
 }
