@@ -1,8 +1,12 @@
 package br.com.abruzzo.estruturadadosDIO;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class TestandoStreams {
 
@@ -42,6 +46,51 @@ public class TestandoStreams {
 
 
 
+        List<String> listaString = Arrays.asList("1","2","10","25","40","3");
+
+        listaString.stream().forEach(new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        });
+
+        listaString.stream().forEach( s -> System.out.println(s));
+
+        System.out.println("------------------------------------------");
+
+        listaString.stream().forEach(System.out::println);
+
+        System.out.println("------------------------------------------");
+
+
+        listaString.stream().map(new Function<String, Integer>() {
+            @Override
+            public Integer apply(String s) {
+                return Integer.parseInt(s);
+            }
+        }).collect(Collectors.toList())
+                .forEach(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) {
+                        System.out.println(elevaAPotencia(integer, 10));
+                    }
+
+                    private int elevaAPotencia(int i, int potencia) {
+                        return (int) Math.pow(i,potencia);
+
+                    }
+                });
+
+
+        System.out.println("------------------------------------------");
+
+
+        listaString.stream().map(Integer::parseInt)
+                .collect(Collectors.toList())
+                .forEach(integer -> {
+                    System.out.println((Math.pow(integer, 10)));
+                });
 
 
 
@@ -49,7 +98,4 @@ public class TestandoStreams {
 
 
     }
-
-
-
 }
