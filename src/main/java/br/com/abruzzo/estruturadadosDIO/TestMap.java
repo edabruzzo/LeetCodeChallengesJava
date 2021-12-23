@@ -153,6 +153,18 @@ public class TestMap {
 
 
 
+                /*
+                    Comparação usando Lambda
+         */
+        Set<Map.Entry<String,Livro>> conjuntoMapsLivros4 = new TreeSet<>(Comparator.comparing(
+            (livroEntry) -> livroEntry.getValue().getPaginas()));
+
+        conjuntoMapsLivros4.addAll(mapaLivros.entrySet());
+        System.out.println(conjuntoMapsLivros4.toString());
+
+
+
+
 
     }
 
