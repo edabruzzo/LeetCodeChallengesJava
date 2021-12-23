@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -91,6 +92,69 @@ public class TestandoStreams {
                 .forEach(integer -> {
                     System.out.println((Math.pow(integer, 10)));
                 });
+
+        System.out.println("------------------------------------------");
+
+
+        listaString.stream().map(new Function<String, Integer>() {
+                    @Override
+                    public Integer apply(String s) {
+                        return Integer.parseInt(s);
+                    }
+                })
+                .filter(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer integer) {
+                        return integer > 10;
+                    }
+                })
+                .collect(Collectors.toList())
+                .forEach(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) {
+                        System.out.println(elevaAPotencia(integer, 10));
+                    }
+
+                    private int elevaAPotencia(int i, int potencia) {
+                        return (int) Math.pow(i,potencia);
+
+                    }
+                });
+
+
+        System.out.println("------------------------------------------");
+
+
+
+
+        System.out.println("------------------------------------------");
+
+
+        listaString.stream().map(Integer::parseInt)
+                .filter(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer integer) {
+                        return integer>10;
+                    }
+                })
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+
+
+        System.out.println("------------------------------------------");
+
+
+        System.out.println("------------------------------------------");
+
+
+        listaString.stream().map(Integer::parseInt)
+                .filter(i-> i > 10)
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+
+
+        System.out.println("------------------------------------------");
+
 
 
 
