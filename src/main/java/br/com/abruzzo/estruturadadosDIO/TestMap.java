@@ -75,10 +75,45 @@ public class TestMap {
         }
         double mediaConsumo = somaConsumo / mapaVeiculosConsumo.size();
         System.out.println(String.format("Média consumo: %.2f",mediaConsumo));
-        
+
+        System.out.println(mapaVeiculosConsumo);
+
+        while(iteratorMapaVeiculos.hasNext()){
+            Double proximo = iteratorMapaVeiculos.next();
+            if(proximo.compareTo(15.6) > 0)
+                iteratorMapaVeiculos.remove();
+        }
+
+        System.out.println(mapaVeiculosConsumo);
+
+
+        Map<String,Double> linkedHashMap = new LinkedHashMap<>(mapaVeiculosConsumo);
+        Map<String,Double> treeMap = new TreeMap<>(mapaVeiculosConsumo);
+
+        System.out.println(linkedHashMap.toString());
+        System.out.println("------------------------------------");
+        System.out.println(treeMap);
+
+
+        ordenarMap(mapaVeiculos);
+        ordenarMap(mapaVeiculosConsumo);
+
+
+        Map<String, Livro> mapaLivros = new HashMap<>();
 
 
 
+
+
+    }
+
+
+
+
+
+
+
+    private static void ordenarMap(Map<?, ?> mapaVeiculosConsumo) {
 
 
 
