@@ -1,7 +1,5 @@
 package br.com.abruzzo.estruturadadosDIO;
 
-import java.util.Objects;
-
 public class Veiculo implements Comparable<Veiculo>{
 
     private String marca;
