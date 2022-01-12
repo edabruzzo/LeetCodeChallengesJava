@@ -20,6 +20,14 @@ public class EstudanteComparable implements Comparable<EstudanteComparable> {
         this.nota = nota;
     }
 
+    public EstudanteComparable(String nome) {
+        this.nome = nome;
+    }
+
+    public EstudanteComparable(float nota) {
+        this.nota = nota;
+    }
+
     public String getNome() {
         return nome;
     }
