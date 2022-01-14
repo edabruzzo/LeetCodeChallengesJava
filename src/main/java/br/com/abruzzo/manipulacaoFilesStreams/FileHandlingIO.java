@@ -1,4 +1,4 @@
-package br.com.abruzzo;
+package br.com.abruzzo.manipulacaoFilesStreams;
 
 import java.io.*;
 
@@ -19,7 +19,7 @@ public class FileHandlingIO {
     }
 
 
-    private String readFromInputStream(InputStream inputStream) throws IOException {
+    public static String readFromInputStream(InputStream inputStream) throws IOException {
         StringBuilder resultStringBuilder = new StringBuilder();
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
