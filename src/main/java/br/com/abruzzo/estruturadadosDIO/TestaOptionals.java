@@ -33,9 +33,13 @@ public class TestaOptionals {
         Optional<String> optionalNomeEstudante = Optional.ofNullable(estudante2.getNome());
         imprimirOptional(Optional.of(optionalNomeEstudante));
 
-
-
     }
+
+
+
+
+
+
 
     private static void imprimirOptional(Optional<Object> optionalEstudante) {
         optionalEstudante.ifPresentOrElse(System.out::println,()-> System.out.println("Valor nulo"));
