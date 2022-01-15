@@ -1,9 +1,6 @@
 package br.com.abruzzo.Challenges_DIO_LeetCode_Among_Others;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -59,7 +56,7 @@ public class SmallestSufficientTeam {
 
 
         int[] team = smallestSufficientTeam(req_skills_1, listSkilledPeople);
-
+        Arrays.stream(team).forEach(System.out::println);
 
 
     }
@@ -68,6 +65,7 @@ public class SmallestSufficientTeam {
 
         ArrayList<Integer> listaIndicesPessoas = new ArrayList<>();
 
+        Map<String, Boolean> mapSkillsNeeded = new HashMap<>();
 
         Arrays.stream(req_skills).forEach(
 
@@ -75,8 +73,12 @@ public class SmallestSufficientTeam {
 
                     for(int i=0; i< people.size(); i++){
 
-                        if(people.get(i).stream().anyMatch(skill -> Objects.equals(skill,skillNeeded)))
+                        if(people.get(i).stream().anyMatch(skill -> Objects.equals(skill,skillNeeded))){
+                            mapSkillsNeeded.put(skillNeeded,Boolean.TRUE);
                             listaIndicesPessoas.add(i);
+
+                        }
+
 
                     }
 
