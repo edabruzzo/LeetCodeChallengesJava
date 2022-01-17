@@ -111,7 +111,7 @@ public class FileHandlingIO {
 
     public static void copiarArquivo() throws IOException {
 
-        String nomeArquivoOriginal = "/home/usuario/IdeaProjects/LeetCodeChallenges/src/main/resources/teste.txt";
+        String nomeArquivoOriginal = "/home/usuario/IdeaProjects/LeetCodeChallengesJava/src/main/resources/teste.txt";
 
         String nomeArquivoOriginal2 = null;
         try {
@@ -169,14 +169,9 @@ public class FileHandlingIO {
 
     }
 
-    private static BufferedReader obterBufferedReader(String nomeArquivo) {
+    private static BufferedReader obterBufferedReader(String pathArquivo) {
 
-        File arquivoTeste = null;
-        try {
-            arquivoTeste = new File(String.valueOf(Paths.get(FileHandlingIO.class.getResource(nomeArquivo).toURI())));
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+        File arquivoTeste = new File(pathArquivo);
 
         BufferedReader bufferedReader = null;
         try {
