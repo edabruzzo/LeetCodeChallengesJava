@@ -36,35 +36,51 @@ public class FileHandlingIO {
         printWriter.println("Digite 3 recomendações de filmes: ");
         printWriter.flush();
 
-        String line = lerFromScanner();
-
-        copiarConteudoParaArquivo(printWriter,line,"src/main/resources/recomendacoes.txt");
+        copiarConteudoParaArquivo(printWriter, "src/main/resources/recomendacoes.txt");
 
     }
 
     private static String lerFromScanner() {
         return scanner.nextLine();
-
     }
 
-    private static void copiarConteudoParaArquivo(PrintWriter printWriter, String line, String nomeArquivo) throws IOException {
+    private static void copiarConteudoParaArquivo(PrintWriter printWriter, String nomeArquivo) throws IOException {
 
-        File file = new File(nomeArquivo);
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file.getName()));
+        BufferedWriter bufferedWriter = obterBufferedWriter(nomeArquivo);
+
+        String line = null;
 
         do {
-            bufferedWriter.write(line);
-            bufferedWriter.newLine();
-            bufferedWriter.flush();
-            line = scanner.nextLine();
-        } while(!(line.equalsIgnoreCase("fim")));
+            line = lerFromScanner();
+            escreverStringLineArquivo(line, bufferedWriter);
 
-        printWriter.printf("Arquivo \"%s\" foi criado com sucesso!", file.getName());
+        }while(!line.equalsIgnoreCase("fim"));
 
+
+        printWriter.printf("Arquivo \"%s\" foi criado com sucesso!", nomeArquivo);
         printWriter.close();
         scanner.close();
         bufferedWriter.close();
     }
+
+    private static BufferedWriter obterBufferedWriter(String nomeArquivo) {
+
+        File file = new File(nomeArquivo);
+        BufferedWriter bufferedWriter = null;
+        try {
+            bufferedWriter = new BufferedWriter(new FileWriter(file.getName()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return bufferedWriter;
+
+    }
+
+    private static void escreverStringLineArquivo(String line, BufferedWriter bufferedWriter) throws IOException {
+            bufferedWriter.write(line);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+        }
 
 
     public static String readFromInputStream(InputStream inputStream) throws IOException {
