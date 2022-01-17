@@ -23,7 +23,13 @@ import java.util.stream.Stream;
  *
  * @link https://leetcode.com/problems/smallest-sufficient-team/
  *
+ * TRATA-SE DE UM PROBLEMA DE OTIMIZAÇÃO --> PESQUISA OPERACIONAL
  *
+ * USAR BITMASKING E DYNAMIC PROGRAMMING:
+ *
+ * @ https://www.geeksforgeeks.org/bitmasking-and-dynamic-programming-set-1-count-ways-to-assign-unique-cap-to-every-person/
+ *
+ * SOLUÇÃO COM EXPLICAÇÃO: @ https://leetcode.com/problems/smallest-sufficient-team/discuss/1583288/JavaScript-Solution-with-explanation
  *
  *
  *

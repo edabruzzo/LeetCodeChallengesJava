@@ -25,6 +25,8 @@ class FileHandlingIOTest{
             "172\n" +
             "173";
 
+    FileHandlingIO fileHandlingIO = new FileHandlingIO();
+
 
     @Test
     @Order(1)
@@ -69,6 +71,14 @@ class FileHandlingIOTest{
         }
         return data;
     }
+
+
+    @Test
+    void lerTecladoEscreverDocumento() {
+
+
+    }
+
 
 
 
