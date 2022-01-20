@@ -43,23 +43,10 @@ public class DesafioTracos {
 
 
     public static void main(String[] args) {
-
-
         resolucao1();
-
         resolucao2();
-
-
-
-
-
-
-
-
-
-
-
     }
+
 
     private static void resolucao2() {
 
@@ -87,14 +74,14 @@ public class DesafioTracos {
             desenhoTela += "-";
         }
 
-
         System.out.println(desenhoTela);
-
-
 
     }
 
+
+
     /**
+     * Solução implementada no método abaixo foi encontrada nesse link abaixo
      * https://github.com/eduardo-mior/URI-Online-Judge-Solutions/blob/master/Iniciante/URI%202747.java
      */
     private static void resolucao1() {
